@@ -3,7 +3,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
-# Use Cloudinary API integration
+# User authentication
+gem 'devise'
+gem 'omniauth-oktaoauth'
+gem "activerecord-session_store", git: "https://github.com/rails/activerecord-session_store.git", branch: "master"
+gem 'figaro'
+
+# Cloudinary API for image management
 gem 'cloudinary'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

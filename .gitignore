@@ -6,6 +6,7 @@
 
 # Ignore Cloudinary credentials
 /config/cloudinary.yml
+/config/application.yml
 
 # Ignore bundler config.
 /.bundle
@@ -41,3 +42,6 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# Ignore application configuration
+/config/application.yml

@@ -1,3 +1,15 @@
+GIT
+  remote: https://github.com/rails/activerecord-session_store.git
+  revision: f188efbc49a522123cc8acc805143824176d01c1
+  branch: master
+  specs:
+    activerecord-session_store (1.1.3)
+      actionpack (>= 5.2)
+      activerecord (>= 5.2)
+      multi_json (~> 1.11, >= 1.11.2)
+      rack (>= 2.0.0, < 3)
+      railties (>= 5.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -63,6 +75,7 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     aws_cf_signer (0.1.3)
+    bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.5.1)
       msgpack (~> 1.0)
@@ -82,12 +95,26 @@ GEM
       rest-client
     concurrent-ruby (1.1.7)
     crass (1.0.6)
+    devise (4.7.3)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.10.0)
+    faraday (1.3.0)
+      faraday-net_http (~> 1.0)
+      multipart-post (>= 1.2, < 3)
+      ruby2_keywords
+    faraday-net_http (1.0.1)
     ffi (1.14.2)
+    figaro (1.2.0)
+      thor (>= 0.14.0, < 2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    hashie (4.1.0)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -95,6 +122,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.1)
       activesupport (>= 5.0.0)
+    jwt (2.2.2)
     listen (3.4.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -113,10 +141,29 @@ GEM
     mini_mime (1.0.2)
     minitest (5.14.3)
     msgpack (1.3.3)
+    multi_json (1.15.0)
+    multi_xml (0.6.0)
+    multipart-post (2.1.1)
     netrc (0.11.0)
     nio4r (2.5.4)
     nokogiri (1.11.1-x86_64-linux)
       racc (~> 1.4)
+    oauth2 (1.4.4)
+      faraday (>= 0.8, < 2.0)
+      jwt (>= 1.0, < 3.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (>= 1.2, < 3)
+    omniauth (1.9.1)
+      hashie (>= 3.4.6)
+      rack (>= 1.6.2, < 3)
+    omniauth-oauth2 (1.7.1)
+      oauth2 (~> 1.4)
+      omniauth (>= 1.9, < 3)
+    omniauth-oktaoauth (0.1.6)
+      omniauth (~> 1.5)
+      omniauth-oauth2 (>= 1.4.0, < 2.0)
+    orm_adapter (0.5.0)
     public_suffix (4.0.6)
     puma (5.1.1)
       nio4r (~> 2.0)
@@ -159,11 +206,15 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (1.8.2)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    ruby2_keywords (0.0.2)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -198,6 +249,8 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.7)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -223,12 +276,16 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  activerecord-session_store!
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
   cloudinary
+  devise
+  figaro
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  omniauth-oktaoauth
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.1)

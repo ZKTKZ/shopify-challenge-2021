@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
   protect_from_forgery
+  before_action :user_is_logged_in?
   before_action :check_config
   
   def index
@@ -28,7 +29,8 @@ class PhotosController < ApplicationController
       end
 
       def list_images
-          @images = Cloudinary::Api.resources(options={})
+          #TODO: uncomment below!
+          #@images = Cloudinary::Api.resources(options={})
           p @images
       end
 end
