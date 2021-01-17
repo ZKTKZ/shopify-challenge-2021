@@ -12,5 +12,4 @@ class ApplicationController < ActionController::Base
       resource.env['omniauth.origin'] || root_path
     end
 
-    #TODO: ??'
 end

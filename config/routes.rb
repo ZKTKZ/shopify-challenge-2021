@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   
   resources :users
 
-  resources :photos, except: [:show, :edit, :update, :new]
-  post '/photos/search' => 'photos#search' 
+  resources :photos, only: [:index, :show], format: 'json'
+  get '/photos/search' => 'photos#search' 
 
-  root to: 'photos#index'
+  root to: 'photos#show'
 end

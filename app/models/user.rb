@@ -3,7 +3,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :omniauthable, omniauth_providers: [:oktaoauth]
   def self.from_omniauth(auth)
-    #TODO: get rid of user = ...
     User.find_or_create_by(email: auth["info"]["email"]) do |user|
       user.provider = auth['provider']
       user.uid = auth['uid']
