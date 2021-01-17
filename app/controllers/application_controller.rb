@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
+    #before_action :authenticate_user!
     
     def user_is_logged_in?
       if !session[:oktastate]
@@ -7,8 +8,9 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    #TODO: 'after_sign_in..'
     def after_sign_in_path_for(resource)
-      request.env['omniauth.origin'] || root_path
+      resource.env['omniauth.origin'] || root_path
     end
+
+    #TODO: ??'
 end

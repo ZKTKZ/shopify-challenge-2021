@@ -1,18 +1,17 @@
 # README
 
 ## Introduction
-This image repository was developed for the Shopify Summer 2021 Challenge. This was my first time using Rails.
+This image repository was developed for the Shopify Summer 2021 Challenge. It enables users to upload images, search based on image features (auto tagging) and view all of their images. The app follows the MVC paradigm and was built with Ruby on Rails, which I learnt concurrently. User authentication is managed by Okta SSO, and Cloudinary is used as a CDN. 
 
-## Design Decisions
+
+## Getting Started
+## Design 
 
 - self-hosted a la Nextcloud. Hence, no access control. A demo app is set up on Heroku, which supports all types except local files.
 - image URL is sent in POST body; GET params is less secure
 - API versioning
-- pure backend. use Postman to hit endpoints. there is also a view option, but it is currently not secure. i should add some encryption. 
+
 
 ## Improvements
-- finer access control e.g. with firebase, or nhouse system
-- may add frontend widgets in future with JS, for enhanced UX
-- security eg. CRSF
-
-## Guides
+- more sophisticated access control markers
+- move from sqlite to PG or something

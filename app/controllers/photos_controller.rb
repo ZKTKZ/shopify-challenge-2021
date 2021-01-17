@@ -4,23 +4,20 @@ class PhotosController < ApplicationController
   before_action :check_config
   
   def index
-      list_images
+      #list_images
   end
 
-  #TODO: add json in corresponding view
   def create
     @uploaded = Cloudinary::Uploader.upload(path,:categorization => "google_tagging", :auto_tagging => 0.6)  
-    p @uploaded
+    #TODO
+    #:tags => ['a@b.com']
   end
 
   def search
     query = JSON.parse(request.raw_post)['query']
-    response = (Cloudinary::Search.expression(query).execute)
-    @resources = response['resources']
-  end
-
-  #TODO: delete image by... public id?
-  def destroy
+    #Cloudinary::Search.expression('Cartoon AND tags=a@b.com').execute
+    response = Cloudinary::Search.expression(query + ' AND tags= ' + session[:email]).execute
+    @images = response['resources']
   end
 
   private
@@ -30,7 +27,6 @@ class PhotosController < ApplicationController
 
       def list_images
           #TODO: uncomment below!
-          #@images = Cloudinary::Api.resources(options={})
-          p @images
+          @images = Cloudinary::Api.resources(options={})
       end
 end
