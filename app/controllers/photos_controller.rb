@@ -3,29 +3,26 @@ class PhotosController < ApplicationController
   before_action :user_is_logged_in?
   before_action :check_config
   
-  def index
-  end
-
   def show
     #TODO: uncomment.
-    #list_images
-    render 'show.json.jbuilder'
+    list_images
   end
 
   def create
-    @uploaded = Cloudinary::Uploader.upload(path,:categorization => "google_tagging", :auto_tagging => 0.6)  
-    #TODO
-    #:tags => ['a@b.com']
+    if params[:path]
+      @uploaded = Cloudinary::Uploader.upload(params[:path],:categorization => "google_tagging", :auto_tagging => 0.6)
+      p @uploaded  
+    end
   end
 
   def search
     if params[:query]
       query = params[:query]
-      #p query
-      #Cloudinary::Search.expression('Cartoon AND tags=a@b.com').execute
       response = Cloudinary::Search.expression(query + ' AND tags= ' + session[:email]).execute
       @images = response['resources']
       p @images
+      #TODO: use partials instead
+      render 'show.json.jbuilder'
     end
   end
 
@@ -34,7 +31,11 @@ class PhotosController < ApplicationController
       end
 
       def list_images
-          @images = Cloudinary::Api.resources_by_tag(session[:email], options={})
-          p @images
+          response = Cloudinary::Api.resources_by_tag(session[:email], options={})
+          if response
+            @images = response['resources']
+            p @images
+            render 'show.json.jbuilder'
+          end
       end
 end

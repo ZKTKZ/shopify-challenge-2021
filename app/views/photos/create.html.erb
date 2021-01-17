@@ -1,2 +1,4 @@
-<h1>Photos#create</h1>
-<p>Find me in app/views/photos/create.html.erb</p>
+<%= form_with url: "/photos/create", method: :get, multipart: true do |form| %>
+    <%= form.file_field :path %>
+    <%= form.submit %>
+<% end %>

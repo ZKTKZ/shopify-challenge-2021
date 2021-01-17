@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   
   resources :users
 
-  resources :photos, only: [:index, :show], format: 'json'
-  get '/photos/search' => 'photos#search' 
+  get 'photos/search' => 'photos#search' 
+  get 'photos/create' => 'photos#create'
+  resources :photos, only: [:show], format: 'json'
+
 
   root to: 'photos#show'
 end
