@@ -3,20 +3,20 @@ class PhotosController < ApplicationController
   before_action :user_is_logged_in?
   before_action :check_config
   
-  # ROOT - SHOW ALL IMAGES
+  # HOMEPAGE - SHOW ALL IMAGES AS JSON
   def show
     list_images
   end
 
-  # UPLOAD - CALLED BY VIEW
+  # UPLOAD LOGIC
   def create
     if params[:path]
-      @uploaded = Cloudinary::Uploader.upload(params[:path],:categorization => "google_tagging", :auto_tagging => 0.6)
-      p @uploaded  
+      p params[:path]
+      @uploaded = Cloudinary::Uploader.upload(params[:path],:categorization => "google_tagging", :auto_tagging => 0.6, :tags => session[:email])
     end
   end
 
-  # SEARCH - CALLED BY VIEW
+  # SEARCH LOGIC
   def search
     if params[:query]
       query = params[:query]

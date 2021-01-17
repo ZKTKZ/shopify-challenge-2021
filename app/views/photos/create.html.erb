@@ -1,4 +1,8 @@
-<%= form_with url: "/photos/create", method: :get, multipart: true do |form| %>
-    <%= form.file_field :path %>
-    <%= form.submit %>
-<% end %>
+<body>
+    <h1> Upload image
+    <%= form_with url: "/photos/create", method: :get do |form| %>
+    <%= form.label :path, "File URL: " %>
+    <%= form.text_field :path %>
+    <%= form.submit "Enter" %>
+    <% end %>
+</body>

@@ -11,6 +11,19 @@ This image repository was developed for the Shopify Summer 2021 Challenge. This 
 2. Create an account with Cloudinary, and replace 'XXXX' in config/cloudinary.yml
 3. To start the server, run `bin/rails s` from the root
 
+## Overview 
+- The app follows the MVC paradigm. I used this challenge as an opportunity to learn Ruby on Rails, and so it is the language of choice. User authentication is managed by Okta SSO, and Cloudinary is used as a CDN. ActiveRecord Sessions enable a user's login state to be tracked across different pages in the application. Fpr styling, we use PicoCSS.
+### Tests
+Unit tests for models are in the models folder under `/tests`
+
+### Models
+
+`users`
+
+`sessions`
+
+### Routes
+`/config/routes.rb`
 The following routes are relevant for the end user:
 
 /photos/search
@@ -19,23 +32,16 @@ The following routes are relevant for the end user:
 
 /photos/show
 
-## Overview 
-- The app follows the MVC paradigm. I used this challenge as an opportunity to learn Ruby on Rails, and so it is the language of choice. User authentication is managed by Okta SSO, and Cloudinary is used as a CDN. ActiveRecord Sessions enable a user's login state to be tracked across different pages in the application.
-### Tests
-Unit tests for models and controllers are in their respective subfolders within '/test'
+N.B. Cloudinary may take upto 5 minutes to show newly uploaded assets.
 
 ### Controllers
-
-### Model
-
-### View
-Partials allow us to avoid repetitive layout code, in accordance with DRY principles.
+`/app/controllers`
 
 
-### Improvements
+### Potential Improvements
 Some features of this project would ideally be revamped for a proper production context. A few ideas:
-- Use Ruby namespaces for api versioning, so that...
+- Use Ruby namespaces for api versioning
 - Move from sqlite to Postgres database, as...
-- Integration testing of multiple controllers, to enable new features without breaking existing functionality
-- Postman and Okta compatibility is an open issue](https://github.com/postmanlabs/postman-app-support/issues/2646), hence the basic HTML view. Custom CSS would definitely be a welcome update.
-- Cloud-hosted deployment. This image hosting service uses the reputable Cloudinary and Okta libraries for security. Unfortunately, these are both expensive services ($100/month for Cloudinary alone), so an already-deployed version was not feasible
+- Integration testing of controllers, to enable new features without breaking existing functionality
+- Use partials for duplicate view logic per DRY coding standards
+- Cloud-hosted deployment. Cloudinary and Okta libraries for security are both expensive services ($100/month for Cloudinary alone), so an already-deployed version was not launched

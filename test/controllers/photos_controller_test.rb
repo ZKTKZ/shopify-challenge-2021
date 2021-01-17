@@ -1,8 +1,8 @@
 require "test_helper"
 
 class PhotosControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get photos_index_url
+  test "should get search" do
+    get photos_search_url
     assert_response :success
   end
 
