@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
 
   devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks'}
-  # TODO: add namespace for versioning
   
   resources :users
 

@@ -1,7 +1,7 @@
 # README
 
 ## Introduction
-This image repository was developed for the Shopify Summer 2021 Challenge. This is intended as a self-hosted server solution  that enables users to upload images, search based on image features (auto tagging) and view all of their images. 
+This image repository was developed for the Shopify Summer 2021 Challenge. This is intended as a self-hosted solution that enables users to upload images, search based on ML-detected image features, and view all of their available images. An accompanying POC frontend is also presented.
 
 
 ## Getting Started
@@ -19,13 +19,8 @@ The following routes are relevant for the end user:
 
 /photos/show
 
-## Design 
-- The app follows the MVC paradigm. I used this challenge as an opportunity to learn Ruby on Rails, and so it is the language of choice. User authentication is managed by Okta SSO, and Cloudinary is used as a CDN. 
-- Originally intended to build pure backend, with corresponding Postman collection. [But Postman and Okta compatibility is an open issue](https://github.com/postmanlabs/postman-app-support/issues/2646), hence I created a very primitive HTML view 
-- /index and /search JSON views rerndered with JBuilder 
-- API versioning with namespaces
-
-## Overview
+## Overview 
+- The app follows the MVC paradigm. I used this challenge as an opportunity to learn Ruby on Rails, and so it is the language of choice. User authentication is managed by Okta SSO, and Cloudinary is used as a CDN. ActiveRecord Sessions enable a user's login state to be tracked across different pages in the application.
 ### Tests
 Unit tests for models and controllers are in their respective subfolders within '/test'
 
@@ -34,11 +29,13 @@ Unit tests for models and controllers are in their respective subfolders within 
 ### Model
 
 ### View
-
+Partials allow us to avoid repetitive layout code, in accordance with DRY principles.
 
 
 ### Improvements
 Some features of this project would ideally be revamped for a proper production context. A few ideas:
-- Use Ruby namespaces for api versioning.
+- Use Ruby namespaces for api versioning, so that...
 - Move from sqlite to Postgres database, as...
 - Integration testing of multiple controllers, to enable new features without breaking existing functionality
+- Postman and Okta compatibility is an open issue](https://github.com/postmanlabs/postman-app-support/issues/2646), hence the basic HTML view. Custom CSS would definitely be a welcome update.
+- Cloud-hosted deployment. This image hosting service uses the reputable Cloudinary and Okta libraries for security. Unfortunately, these are both expensive services ($100/month for Cloudinary alone), so an already-deployed version was not feasible

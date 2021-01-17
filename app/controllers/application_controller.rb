@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
-    #before_action :authenticate_user!
     
     def user_is_logged_in?
       if !session[:oktastate]
