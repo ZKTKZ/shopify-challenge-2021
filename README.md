@@ -7,10 +7,10 @@ This image repository was developed for the Shopify Summer 2021 Challenge. This 
 ## 🚀 Getting Started
 
 ### Installation
-0. Clone this repo by typing in `git clone https://github.com/ZKTKZ/shopify-challenge-2021.git`
-1. Create an account with Okta, and replace 'XXXX' in config/application.yml with your credentals 
-2. Create an account with Cloudinary, and replace 'XXXX' in config/cloudinary.yml with your credentals 
-3. To start the server, run `bin/rails s` from the root
+1. Clone this repo by typing in `git clone https://github.com/ZKTKZ/shopify-challenge-2021.git`
+2. Create an account with Okta, and replace 'XXXX' in config/application.yml with your credentals 
+3. Create an account with Cloudinary, and replace 'XXXX' in config/cloudinary.yml with your credentals 
+4. To start the server, run `bin/rails s` from the root
 
 ### Usage
 1. Log in with your Okta account
@@ -32,7 +32,7 @@ To interact with the database, run `bin/rails c` from root, and then use [Active
 `/config/routes.rb`
 The following routes are relevant for the end user:
 
-* `/photos/create`: enter image URLs and upload them to the cloud image repository.
+* `/photos/create`: Enter image URLs and upload them to the cloud image repository.
 
 * `/photos/search`: Search for existing images by machine-learning generated tags. 
 
@@ -75,7 +75,7 @@ For CSS styling of our views, we use PicoCSS, while JSON views are handled by JB
 
 The view code is not complex, and is fairly self-explanatory. In a nutshell, the `*.erb` files handle user input and are regular HTML views with some basic CSS, whilst the `*.jbuilder` files render pure JSON views.
 
-### Potential Improvements
+## Potential Improvements
 A few ideas for improving the application:
 - [ ] Use Ruby namespaces for API versioning
 - [ ] Move from SQLite to Postgres database, 
