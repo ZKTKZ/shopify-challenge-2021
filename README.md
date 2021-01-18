@@ -13,6 +13,8 @@ This image repository was developed for the Shopify Summer 2021 Challenge. This 
 4. To start the server, run `bin/rails s` from the root
 
 ### Usage
+![Okta sign up](https://lh3.googleusercontent.com/tlEjfmTcI72JBa7sDkhM1YHAkcY6UwVEMet4PaFNNIrNq_rEAF5eRZ2HFRvQpLNUYGJdYIiHxcLMG9LX-uazH11VXyzBC75b2afXNKRYfpbN5fO5SS7VkvT2fy00yeRuIzBUgmvy)
+
 1. Log in with your Okta account
 2. Upload a few photos -- they can be absolute file paths, or online-hosted
 3. Now, go to `/photos/search` to search for your photos. You can also view all photos by navigating to the base URL `/`.
@@ -72,14 +74,7 @@ The view code is not complex, and is fairly self-explanatory. In a nutshell, the
 
 ## Potential Improvements
 A few ideas for improving the application:
-<<<<<<< HEAD
-- [] Use Ruby namespaces for api versioning
-- Move from sqlite to Postgres database, as...
-- Use partials for duplicate view logic per DRY coding standards
-- Add more testing e.g. functional testing for controllers
-=======
 - [ ] Use Ruby namespaces for API versioning
 - [ ] Move from SQLite to Postgres database. SQLite runs in memory, and while that is fine for our self-hosted approach, it would not be suitable for production.
 - [ ] Use partials for duplicate view logic per DRY coding standards
 - [ ] Add integration tests for the view-controller relationship. 
->>>>>>> 05d6a95f126c543a1535ff7e61c5aee5ec40c77b
