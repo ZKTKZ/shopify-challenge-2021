@@ -80,8 +80,8 @@ The view code is not complex, and is fairly self-explanatory. In a nutshell, the
 
 ### Potential Improvements
 A few ideas for improving the application:
-- [] Use Ruby namespaces for api versioning
-- [] Move from sqlite to Postgres database, 
-- [] Use partials for duplicate view logic per DRY coding standards
-- [] Add more functional and integration tests to test business logic. Currently, we only test routes.
-- [] Cloud-hosted deployment. Cloudinary and Okta libraries for security are both expensive services ($100/month for Cloudinary alone), so an already-deployed version was not launched
+- [ ] Use Ruby namespaces for api versioning
+- [ ] Move from sqlite to Postgres database, 
+- [ ] Use partials for duplicate view logic per DRY coding standards
+- [ ] Add more functional and integration tests to test business logic. Currently, we only test routes.
+- [ ] Cloud-hosted deployment. Cloudinary and Okta libraries for security are both expensive services ($100/month for Cloudinary alone), so an already-deployed version was not launched
