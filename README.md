@@ -20,7 +20,7 @@ This image repository was developed for the Shopify Summer 2021 Challenge. This 
 ## Overview 
 The app follows the MVC paradigm. I used this challenge as an opportunity to learn Ruby on Rails.
 
-The app supports access control, with [Devise and Okta](https://developer.okta.com/blog/2018/09/18/simple-authentication-with-rails-and-omniauth) being used for authentication, and [ActiveRecord::SessionStore](https://github.com/rails/activerecord-session_store) used to manage a user's session across the webpages.Of course, the user is only able to view images that they uploaded on Cloudinary, as a natural consequence of fthe access control.
+The app supports access control, with [Devise and Okta](https://developer.okta.com/blog/2018/09/18/simple-authentication-with-rails-and-omniauth) being used for authentication, and [ActiveRecord::SessionStore](https://github.com/rails/activerecord-session_store) used to manage a user's session across the webpages. 
 
 See the Gemfile for a comprehensive list of dependencies.
 
@@ -29,16 +29,14 @@ See the Gemfile for a comprehensive list of dependencies.
 To interact with the database, run `bin/rails c` from root, and then use [Active Record Query](https://guides.rubyonrails.org/active_record_querying.html). The application has a `User` Model used by Devise and Omniauth-Okta to create a new User at `/app/models/user.rb`. You can view `/db/migrate` to see what changes were made to the database. 
 
 ### 🗺️ Routes
-`/config/routes.rb`
-The following routes are relevant for the end user:
-
+`/config/routes.rb` defines the following routes
 * `/photos/create`: Enter image URLs and upload them to the cloud image repository.
 
 * `/photos/search`: Search for existing images by machine-learning generated tags. 
 
 * `/photos/show`: View all of current user's images.
 
-Tests are included for routing. See `test/controllers/photos_controller.rb`.
+Tests are included for routing in `test/controllers/photos_controller.rb`.
 
 N.B. Cloudinary may take upto 5 minutes to show newly uploaded assets.
 
@@ -51,7 +49,6 @@ N.B. Cloudinary may take upto 5 minutes to show newly uploaded assets.
      └── users.rb
       ├── omniauth_callbacks_controller.rb
 ```
-The above outlines files of key importance.
 
 * `ApplicationController` defines fundamentals such as CSRF protection, and ensuring that the user is logged in.
 
@@ -61,8 +58,6 @@ The above outlines files of key importance.
 
 
 ### Views
-For CSS styling of our views, we use PicoCSS, while JSON views are handled by JBuilder to separate View and Controller. 
-
 ```
 ├── app/
    ├── views/
@@ -73,7 +68,7 @@ For CSS styling of our views, we use PicoCSS, while JSON views are handled by JB
       ├── show.json.jbuilder
 ```
 
-The view code is not complex, and is fairly self-explanatory. In a nutshell, the `*.erb` files handle user input and are regular HTML views with some basic CSS, whilst the `*.jbuilder` files render pure JSON views.
+The view code is not complex, and is fairly self-explanatory. In a nutshell, the `*.erb` files handle user input and are regular HTML views with some basic [PicoCSS](https://picocss.com/) styling, whilst the `*.jbuilder` files render pure JSON views.
 
 ## Potential Improvements
 A few ideas for improving the application:
