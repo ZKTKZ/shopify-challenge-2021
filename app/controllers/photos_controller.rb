@@ -40,8 +40,11 @@ class PhotosController < ApplicationController
           response = Cloudinary::Api.resources_by_tag(session[:email], options={})
           if response
             @images = response['resources']
-            #@images.each { |image| p image}
-            render 'show.json.jbuilder'
+            if @images.present?
+              render 'show.json.jbuilder'
+            else
+              redirect_to photos_create_path
+            end
           end
       end
 end

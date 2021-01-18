@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :omniauthable, omniauth_providers: [:oktaoauth]
+  #RETRIEVE EXISTING USER, OR CREATE NEW USER
   def self.from_omniauth(auth)
     User.find_or_create_by(email: auth["info"]["email"]) do |user|
       user.provider = auth['provider']

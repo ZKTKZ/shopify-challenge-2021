@@ -50,4 +50,4 @@ A few ideas for improving the application:
 - [] Use Ruby namespaces for api versioning
 - Move from sqlite to Postgres database, as...
 - Use partials for duplicate view logic per DRY coding standards
-- Cloud-hosted deployment. Cloudinary and Okta libraries for security are both expensive services ($100/month for Cloudinary alone), so an already-deployed version was not launched
+- Add more testing e.g. functional testing for controllers
