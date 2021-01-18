@@ -8,8 +8,8 @@ This image repository was developed for the Shopify Summer 2021 Challenge. This 
 
 ### Installation
 1. Clone this repo by typing in `git clone https://github.com/ZKTKZ/shopify-challenge-2021.git`
-2. Create an account with Okta, and replace 'XXXX' in config/application.yml with your credentals 
-3. Create an account with Cloudinary, and replace 'XXXX' in config/cloudinary.yml with your credentals 
+2. Create an account with Okta, and and then replace placeholder variables in the [template here](https://gist.github.com/andrewvanbeek-okta/a069611986d15bb924774c3635a5abb3#file-convert-your-devise-app-to-use-okta-L89) to create your config/application.yml.
+3. Create an account with Cloudinary, and download `cloudinary.yml` per the [documentation](https://cloudinary.com/documentation/rails_integration#configuration). Place the file in `/config`. 
 4. To start the server, run `bin/rails s` from the root
 
 ### Usage
@@ -57,7 +57,7 @@ N.B. Cloudinary may take upto 5 minutes to show newly uploaded assets.
 * `OmniauthCallbacksController` adds a User to the database, and also sets the session state for the current client acacordingly.
 
 
-### Views
+### 🏞️ Views
 ```
 ├── app/
    ├── views/
