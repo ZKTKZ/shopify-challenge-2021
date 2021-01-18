@@ -73,7 +73,6 @@ The view code is not complex, and is fairly self-explanatory. In a nutshell, the
 ## Potential Improvements
 A few ideas for improving the application:
 - [ ] Use Ruby namespaces for API versioning
-- [ ] Move from SQLite to Postgres database, 
+- [ ] Move from SQLite to Postgres database. SQLite runs in memory, and while that is fine for our self-hosted approach, it would not be suitable for production.
 - [ ] Use partials for duplicate view logic per DRY coding standards
-- [ ] Add more functional and integration tests to test business logic. Currently, we only test routes.
-- [ ] Cloud-hosted deployment. Cloudinary and Okta libraries for security are both expensive services ($100/month for Cloudinary alone), so an already-deployed version was not launched
+- [ ] Add integration tests for the view-controller relationship. 
