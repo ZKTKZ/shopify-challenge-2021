@@ -1,8 +1,7 @@
 <body>
-    <h1> Upload image
-    <%= form_with url: "/photos/create", method: :get do |form| %>
-    <%= form.label :path, "File URL: " %>
+    <%= form_with html: { style: "width: 50%; margin: 0 auto; text-align: center;" }, url: "/photos/create", method: :get do |form| %>
+    <%= form.label :path, "Enter image URL or path: " %>
     <%= form.text_field :path %>
-    <%= form.submit "Enter" %>
+    <%= form.submit "Upload" %>
     <% end %>
 </body>

@@ -1,8 +1,7 @@
 <body>
-  <h1> Search images </h1>
-    <%= form_with url: "/photos/search", method: :get do |form| %>
-      <%= form.label :query, "Search for:" %>
+    <%= form_with html: { style: "width: 50%; margin: 0 auto; text-align: center;" }, url: "/photos/search", method: :get do |form| %>
+      <%= form.label :query, "Search by tag:" %>
       <%= form.text_field :query %>
-      <%= form.submit "Search" %>
+      <%= form.submit "Submit" %>
     <% end %>
 </body>
