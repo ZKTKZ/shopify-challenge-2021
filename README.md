@@ -70,6 +70,13 @@ N.B. Cloudinary may take upto 5 minutes to show newly uploaded assets.
 
 The view code is not complex, and is fairly self-explanatory. In a nutshell, the `*.erb` files handle user input and are regular HTML views with some basic [PicoCSS](https://picocss.com/) styling, whilst the `*.jbuilder` files render pure JSON views.
 
+## Potential Improvements
+A few ideas for improving the application:
+- [ ] Use Ruby namespaces for API versioning
+- [ ] Move from SQLite to Postgres database. SQLite runs in memory, and while that is fine for our self-hosted approach, it would not be suitable for production.
+- [ ] Use partials for duplicate view logic per DRY coding standards
+- [ ] Add integration tests for the view-controller relationship. 
+
 ## Screenshots
 The screenshots below demonstrate the initial Okta prompt view, JSON view for all images, and search HTML page respectively.
 
@@ -77,9 +84,3 @@ The screenshots below demonstrate the initial Okta prompt view, JSON view for al
 ![/Show JBuilder](https://lh6.googleusercontent.com/xMHRgkmcRBPmrvg1vZvD56TEMFde8f9kPTlODBReYgGEAHywerju_rHSHx-bBHvWwf3Y-1zKY-N1w-M2Y1oQdV7iR-Eduid7JSOiEOI0O1ZH73RsnBf5dHLSoGZtQIhnD7zXphYz)
 ![HTML Search Form](https://lh6.googleusercontent.com/adXUnv8MJDL3-F17IG-TBcfpD5NOwJo3N4xWjcTgKlUJ_nkYXgrwHJpT9Semvd7EJELOlUndEnO-HbQb-AaxG_vKwhfXUdRU-Dv7T8DPuWQsKDAVdqpplS0GaeygqxbnkQPDKGoq)
 
-## Potential Improvements
-A few ideas for improving the application:
-- [ ] Use Ruby namespaces for API versioning
-- [ ] Move from SQLite to Postgres database. SQLite runs in memory, and while that is fine for our self-hosted approach, it would not be suitable for production.
-- [ ] Use partials for duplicate view logic per DRY coding standards
-- [ ] Add integration tests for the view-controller relationship. 
