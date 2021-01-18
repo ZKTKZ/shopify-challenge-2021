@@ -32,14 +32,11 @@ To interact with the database, run `bin/rails c` from root, and then use [Active
 `/config/routes.rb`
 The following routes are relevant for the end user:
 
-`/photos/create`
-Enter image URLs and upload them to the cloud image repository.
+* `/photos/create`: enter image URLs and upload them to the cloud image repository.
 
-`/photos/search`
-Search for existing images by machine-learning generated tags. 
+* `/photos/search`: Search for existing images by machine-learning generated tags. 
 
-`/photos/show`
-View all of current user's images.
+* `/photos/show`: View all of current user's images.
 
 Tests are included for routing. See `test/controllers/photos_controller.rb`.
 
@@ -56,11 +53,11 @@ N.B. Cloudinary may take upto 5 minutes to show newly uploaded assets.
 ```
 The above outlines files of key importance.
 
-`ApplicationController` defines fundamentals such as CSRF protection, and ensuring that the user is logged in.
+* `ApplicationController` defines fundamentals such as CSRF protection, and ensuring that the user is logged in.
 
-`PhotosController` inherits from the above, and is also houses the main businss logic of the app. Namely, it implements the Cloudinary Create, Search, and Show features.
+* `PhotosController` inherits from the above, and is also houses the main businss logic of the app. Namely, it implements the Cloudinary Create, Search, and Show features.
 
-`OmniauthCallbacksController` adds a User to the database, and also sets the session state for the current client acacordingly.
+* `OmniauthCallbacksController` adds a User to the database, and also sets the session state for the current client acacordingly.
 
 
 ### Views
@@ -80,8 +77,8 @@ The view code is not complex, and is fairly self-explanatory. In a nutshell, the
 
 ### Potential Improvements
 A few ideas for improving the application:
-- [ ] Use Ruby namespaces for api versioning
-- [ ] Move from sqlite to Postgres database, 
+- [ ] Use Ruby namespaces for API versioning
+- [ ] Move from SQLite to Postgres database, 
 - [ ] Use partials for duplicate view logic per DRY coding standards
 - [ ] Add more functional and integration tests to test business logic. Currently, we only test routes.
 - [ ] Cloud-hosted deployment. Cloudinary and Okta libraries for security are both expensive services ($100/month for Cloudinary alone), so an already-deployed version was not launched
